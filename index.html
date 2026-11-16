@@ -1,0 +1,208 @@
+<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Bach BWV 928 — 19 levels</title>
+<style>
+:root{--navy:#112c45;--gold:#d4ad5b;--paper:#fff9eb;--ink:#25364a}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% -15%,#45637b,#10253b 72%);font-family:Georgia,serif;color:var(--ink)}header{text-align:center;padding:24px 12px;color:#fbe9bd}h1{font-size:clamp(35px,6vw,58px);margin:0}header p{margin:5px}.layout{max-width:1150px;margin:0 auto;padding:0 14px 40px}.board{background:linear-gradient(140deg,#fffdf5,#f0e0bf);border:3px solid var(--gold);border-radius:20px;box-shadow:0 18px 48px #0718279c;padding:clamp(15px,3vw,30px)}.top{display:flex;justify-content:space-between;gap:10px;font:600 14px Arial}.track{height:10px;background:#ddcba7;border-radius:12px;margin:12px 0 20px;overflow:hidden}.fill{background:linear-gradient(90deg,#ac8337,#ebc86c);height:100%;width:0}h2{text-align:center;margin:10px 0;font-size:clamp(22px,3vw,30px)}.prompt{text-align:center;max-width:780px;line-height:1.5;margin:12px auto 20px}.score{display:block;max-height:300px;width:100%;object-fit:contain;background:#fff;border:2px solid #d1b985;border-radius:11px;padding:9px;margin:10px auto}.small{display:block;max-height:135px;width:100%;object-fit:contain;background:white;border:1px solid #c9b68c;border-radius:8px;padding:5px}.options,.tiles,.slots{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:16px 0}.opt,.tile,.slot{border:2px solid #b49a66;background:#fffaf0;border-radius:12px;padding:12px;text-align:center;font:600 15px Arial;color:var(--ink);cursor:pointer;min-width:0}.tile{cursor:grab}.tile strong{display:block;margin:7px 0 0}.tile.sel{outline:4px solid #e4b957}.opt:hover,.tile:hover,.slot:hover{background:#f8edcf}.opt.good{background:#ddedda;border-color:#488456}.opt.bad{background:#f6dcd8;border-color:#a55c55}.slot{border-style:dashed;min-height:100px}.slot .small{max-height:95px}.actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:20px 0 0}button.action{font:700 15px Arial;color:#ffedc3;background:#14344c;border:2px solid var(--gold);border-radius:12px;padding:13px 22px;cursor:pointer}button.action:disabled{opacity:.4;cursor:not-allowed}.feedback{text-align:center;min-height:28px;font:600 16px Arial;color:#315f4b;margin:14px 0}.hint{text-align:center;font:14px/1.5 Arial;color:#645c50}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.two figure{margin:0;text-align:center;font:600 14px Arial}.two figcaption{padding:6px}.map{display:flex;flex-wrap:wrap;justify-content:center;gap:7px;margin:15px 0}.map span{background:#e8d4ab;border:1px solid #b58c47;padding:9px 12px;border-radius:25px;font:600 13px Arial}.hidden{display:none!important}.foot{text-align:center;color:#d8c5a3;font:13px Arial;margin:16px}.timer{text-align:center;font:700 25px Arial;color:#1a435c}.label{font:600 13px Arial;color:#6e624d;margin:6px}.student{font:600 15px Arial;display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:15px}.student input,.report input{font:16px Arial;padding:10px;border:1px solid #b49a66;border-radius:8px;max-width:100%}.report{font:15px/1.5 Arial}.report table{border-collapse:collapse;width:100%;background:#fffdf6}.report th,.report td{padding:10px;border:1px solid #c9b68c;text-align:left}.report .goodtxt{color:#286341}.report .badtxt{color:#a0443b}.thumbrow{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.thumbrow img{height:110px}@media(max-width:640px){.two{grid-template-columns:1fr}.options,.tiles,.slots{grid-template-columns:repeat(2,minmax(0,1fr))}.thumbrow img{height:65px}.tile,.slot{padding:7px}.small{max-height:85px}}
+
+/* Barokke editie: decoratie staat volledig los van de originele notenafbeeldingen. */
+:root{--navy:#101e32;--gold:#caa35b;--paper:#fff9e9;--ink:#293044}
+body{background:radial-gradient(ellipse at 50% 5%,#294760 0%,#14283e 42%,#0b182a 100%);background-attachment:fixed}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;background:repeating-linear-gradient(90deg,transparent 0 68px,#c6a26713 69px 70px);z-index:-1}
+header{padding:35px 12px 28px;background:linear-gradient(180deg,#071524b8,#122b43a8);border-bottom:1px solid #bd9555;box-shadow:0 9px 30px #02091066}
+header h1{font-variant:small-caps;letter-spacing:.045em;color:#ffebbb;text-shadow:0 3px 14px #0009}
+header p{color:#ead9b7;font-size:16px;letter-spacing:.025em}
+.eyebrow{color:#e5c784;font:700 11px Arial,sans-serif;letter-spacing:.35em;margin-bottom:12px}
+.layout{max-width:1200px;padding:28px 18px 50px}
+.board{position:relative;overflow:hidden;background:linear-gradient(120deg,#fffdf5 0%,#f6ecd7 55%,#f3e4c7 100%);border:2px solid #c7a15b;border-radius:19px;box-shadow:0 0 0 5px #1b3247,0 0 0 7px #b18a4c,0 26px 70px #0009;padding:clamp(18px,3vw,36px)}
+.board:before,.board:after{content:"❧";position:absolute;color:#b48b49;opacity:.32;font-size:74px;line-height:1;pointer-events:none}
+.board:before{top:4px;left:12px;transform:rotate(-30deg)}.board:after{top:4px;right:12px;transform:scaleX(-1) rotate(-30deg)}
+.ornament{text-align:center;color:#b48b49;font-size:19px;letter-spacing:.2em;margin-bottom:18px}
+.top{color:#695532;border-bottom:1px solid #c7a974;padding-bottom:13px;letter-spacing:.04em}
+.track{height:11px;background:#d4c29d;box-shadow:inset 0 2px 5px #6b4e2433;border:1px solid #ad8d55}
+.fill{background:linear-gradient(90deg,#9d702d,#e5c779,#b38432);transition:width .25s}
+h2{color:#243b52;font-variant:small-caps;letter-spacing:.025em;font-size:clamp(24px,3vw,34px);margin:19px 0 10px}
+.prompt{font:17px/1.6 Georgia,serif;color:#514638}
+.score,.small{border:1px solid #d1bb91;background:#fff!important;box-shadow:0 4px 12px #44321618}
+.score{padding:14px;border-radius:9px;max-height:350px}.small{padding:7px}
+.opt,.tile,.slot{background:linear-gradient(#fffef9,#f7edd8);border:1.5px solid #b69a64;border-radius:10px;box-shadow:0 3px 0 #ddc99f,0 5px 12px #0000000b;transition:transform .12s,background .12s}
+.opt:hover,.tile:hover,.slot:hover{transform:translateY(-2px);background:#fff6df}
+.opt.good,.tile.good{background:#e1efdf!important;border-color:#6e9a71}.opt.bad{background:#f5e1db!important;border-color:#b77a6c}
+button.action{background:linear-gradient(#26445d,#10273c);border:1px solid #d4ad65;color:#f9e9bf;box-shadow:0 3px 0 #091a2b,0 5px 12px #0002;letter-spacing:.02em;transition:transform .12s,filter .12s}
+button.action:not(:disabled):hover{filter:brightness(1.2);transform:translateY(-2px)}
+.student{color:#57462d}.student input{background:#fffdf6;border:1px solid #b9a173;min-width:220px}
+.feedback{color:#2f624e}.hint{color:#655945}.label{color:#705a35}
+.map span{background:#f0e0b9;border:1px solid #c09d5b;color:#463923}
+.report{background:#fffdf8;border:1px solid #c8ae7a;border-radius:12px;padding:18px;margin-top:15px}
+.report table{font:14px/1.5 Arial,sans-serif}.report th{background:#e8d6ad;color:#3c3327}.report tr:nth-child(even){background:#faf3e4}
+.foot{color:#d6c6a4;max-width:900px;margin:24px auto}
+@media(max-width:640px){.board:before,.board:after{font-size:42px}.eyebrow{font-size:9px}.ornament{margin-bottom:8px}.layout{padding:15px 12px 35px}}
+@media print{
+ @page{size:A4;margin:14mm}
+ body{background:#fff!important;color:#000!important}body:before,header,.foot,.ornament,.track,.student,.top,.feedback{display:none!important}
+ .layout{max-width:none;padding:0}.board{background:#fff!important;box-shadow:none!important;border:0!important;padding:0!important;overflow:visible}
+ .board:before,.board:after{display:none}.report{border:0;padding:0;margin:0}
+ .report h2{color:#000;margin:0 0 8px}.report table{font-size:10px;width:100%;table-layout:fixed}.report th,.report td{padding:5px 6px;overflow-wrap:anywhere;border-color:#999}
+ .report tr{break-inside:avoid}.report th:nth-child(1){width:12%}.report th:nth-child(2){width:29%}
+ .actions{display:none!important}#content{display:block!important}
+}
+
+/* Geïllustreerde speelbord-editie — decoraties komen uit het voorbeeld, noten blijven originele JPG's. */
+html,body{width:100%;height:100%;overflow:hidden}
+body{background:#071729 url('manuscript.webp') center top / auto 180px repeat-x}
+.game-shell{width:1500px;position:absolute;left:50%;top:0;transform-origin:top center;transform:translateX(-50%) scale(var(--game-scale,1));min-height:870px;background:radial-gradient(ellipse at 48% 30%,#244662 0%,#0d233b 62%,#09182b 100%);overflow:hidden;box-shadow:0 0 70px #0008}
+.game-shell:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 12% 70%,#bb955b25,transparent 25%),radial-gradient(circle at 86% 70%,#b9955422,transparent 22%)}
+header{height:146px;position:relative;padding:10px 15px 0 285px;text-align:left;background:linear-gradient(90deg,#0c1b2d 0%,#12304a 45%,#071829 100%);border-bottom:2px solid #c9a35e;box-shadow:0 5px 22px #0007}
+header:before{content:"";position:absolute;left:42px;top:0;width:195px;height:146px;background:url('bach_portret.webp') center top/cover no-repeat;filter:drop-shadow(5px 5px 9px #0008)}
+header:after{content:"";position:absolute;right:35px;top:6px;width:260px;height:118px;background:url('manuscript.webp') center/cover;border:4px ridge #a77d3b;opacity:.58;transform:rotate(7deg);box-shadow:0 6px 20px #0008}
+header h1{font-size:66px;line-height:1.06;color:#f9d88d;text-shadow:0 3px #593d1d,0 5px 8px #000}
+header p{font-size:20px;display:inline-block;background:linear-gradient(#f9e4aa,#d5a653);border:2px solid #9d6e30;border-radius:40% 8% 35% 8%;color:#13253a;padding:5px 34px;margin:4px 0;box-shadow:0 3px 7px #0008}
+.eyebrow{display:none}
+.layout{position:relative;max-width:none;width:1500px;padding:20px 18px 25px;display:grid;grid-template-columns:225px 1fr 245px;gap:16px;align-items:start}
+.board{padding:15px 20px 16px;min-width:0;min-height:570px;max-height:none;border:5px ridge #d6ae63;border-radius:19px;box-shadow:0 0 0 3px #192f42,0 13px 28px #0009;background:linear-gradient(140deg,#fff7e6,#eed8a8)}
+.board:before,.board:after{font-size:45px;top:0}.ornament{margin:0;font-size:12px;height:12px}
+.top{padding-bottom:6px;font-size:13px}.student{margin-top:6px;font-size:13px}.student input{padding:5px 9px;font-size:13px;min-width:190px}.track{margin:7px 0 9px;height:8px}
+h2{font-size:27px;margin:5px 0 6px}.prompt{font-size:15px;line-height:1.35;margin:6px auto 10px}
+.score{max-height:220px;padding:6px;margin:7px auto}.small{max-height:104px;padding:4px}
+.options,.tiles,.slots{gap:8px;margin:10px 0;grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+.opt,.tile,.slot{padding:8px;font-size:13px}.slot{min-height:70px}.slot .small{max-height:65px}
+.actions{margin:9px 0 0;gap:8px}button.action{font-size:13px;padding:9px 15px;border-radius:24px;background:linear-gradient(#f9d87e,#b67c1c);color:#15253a;text-shadow:0 1px #ffe6a6;border:2px solid #936520;box-shadow:inset 0 2px 1px #fff8,0 4px 5px #0005}
+.feedback{margin:7px 0;min-height:18px;font-size:13px}.hint{font-size:12px}.map{margin:8px 0;gap:5px}.map span{padding:6px 8px;font-size:11px}
+.two{gap:8px}.two .small{max-height:125px}.timer{font-size:20px}.thumbrow img{height:85px}
+.mission-panel,.journey-panel{position:relative;color:#142c45;background:linear-gradient(140deg,#fff5da,#efd4a1);border:5px ridge #d8b16e;border-radius:17px;box-shadow:0 0 0 2px #233b50,0 10px 24px #0009;padding:15px 13px;text-align:center;min-height:270px}
+.panel-head{font-size:24px;font-weight:bold;font-variant:small-caps;color:#183454;border-bottom:2px solid #bb904b;padding-bottom:9px}
+.mission-panel p{font-size:17px;line-height:1.5;text-align:left;margin:17px 4px}
+.mission-art{height:145px;background:url('manuscript.webp') center/cover;border-radius:10px;border:3px solid #c29c58;opacity:.7}
+.journey-panel{min-height:480px}.journey-map{height:132px;margin:15px -8px 8px;background:linear-gradient(#0c213966,#0c213966),url('manuscript.webp') center/cover;border:3px ridge #d5ac64;border-radius:12px}
+.journey-steps{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:13px}.journey-steps span{font:600 13px Georgia,serif;padding:8px 4px;border:1px solid #ae8341;border-radius:20px;background:#fff6dd}.journey-steps span.active{background:linear-gradient(#ffe9a5,#d7a444);box-shadow:0 0 10px #d4a43e}.journey-steps span.done:after{content:' ✓';color:#24754b}
+.compass{width:125px;height:125px;margin:14px auto 0;background:url('kompas.webp') center center/cover;border-radius:100%;filter:drop-shadow(0 4px 7px #0006)}
+.foot{grid-column:1/-1;margin:0;color:#dcc6a0;font-size:11px}.report{padding:10px}.report h2{font-size:23px}.report table{font-size:11px}.report th,.report td{padding:5px}.report .actions{margin-top:8px}
+@media print{html,body{height:auto;overflow:visible}.game-shell{position:static!important;transform:none!important;width:100%!important;min-height:0;background:#fff!important}.layout{display:block;width:100%;padding:0}.mission-panel,.journey-panel{display:none!important}.board{max-height:none;min-height:0}.report table{font-size:10px}header{display:none!important}}
+
+/* Antwoorden van de eerste zeven levels blijven verborgen in de zijbalk. */
+.journey-steps span{font-size:17px;min-height:35px}
+/* Een compacte, gedecoreerde kop op het afdrukbare resultatenrapport. */
+@media print{
+ @page{size:A4;margin:12mm}
+ html,body{width:auto!important;height:auto!important;overflow:visible!important;background:#fff!important}
+ .game-shell{position:static!important;left:auto!important;top:auto!important;transform:none!important;width:100%!important;min-height:0!important;overflow:visible!important;box-shadow:none!important;background:#fff!important}
+ .game-shell:before{display:none!important}
+ header{display:block!important;position:relative!important;width:100%!important;height:115px!important;padding:18px 12px 8px 155px!important;margin:0 0 14px!important;background:linear-gradient(90deg,#0c1b2d,#12304a 70%,#071829)!important;border:2px solid #b78c42!important;box-shadow:none!important;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+ header:before{display:block!important;left:8px!important;top:0!important;width:125px!important;height:110px!important;background:url('bach_portret.webp') center top/cover no-repeat!important}
+ header:after{display:block!important;right:10px!important;top:8px!important;width:110px!important;height:85px!important;opacity:.25!important}
+ header h1{font-size:35px!important;line-height:1.2!important;color:#f9d88d!important;margin:0!important}
+ header p{font-size:12px!important;margin:4px 0!important;padding:3px 10px!important;max-width:390px!important}
+ .layout{display:block!important;width:100%!important;max-width:none!important;padding:0!important}
+ .mission-panel,.journey-panel,.foot{display:none!important}
+ .board{width:100%!important;min-height:0!important;max-height:none!important;border:0!important;box-shadow:none!important;background:#fff!important;padding:0!important}
+ .board:before,.board:after,.ornament,.top,.student,.track,.feedback,.actions{display:none!important}
+ .report{display:block!important;padding:0!important;margin:0!important;border:0!important;box-shadow:none!important}
+ .report h2{font-size:19px!important;margin:0 0 8px!important}
+ .report table{font-size:10px!important;table-layout:fixed!important}
+ .report th,.report td{padding:5px!important}
+ .report tr{break-inside:avoid}
+}
+</style></head><body><div class="game-shell"><header><div class="eyebrow">✦ DE MUZIKALE SCHATKAART ✦</div><h1>♬ Bach BWV 928</h1><p>De Kleine Prelude · Een muzikale ontdekkingsreis</p></header><div class="layout"><aside class="mission-panel"><div class="panel-head">❦ Jouw missie ❦</div><p id="missionText">Ontdek de muzikale reis van Bach en herken de fragmenten.</p><div class="mission-art"></div></aside><div class="board"><div class="ornament" aria-hidden="true">❦ ───── ♫ ───── ❦</div><div class="top"><span id="levelnum">Level 1 van 19</span><span id="points">★ 0 punten</span></div><div class="student"><label for="studentName">Naam leerling: </label><input id="studentName" type="text" maxlength="90" placeholder="Vul je naam in" autocomplete="name"></div><div class="track"><div class="fill" id="fill"></div></div><div id="content"></div><div class="feedback" id="feedback" aria-live="polite"></div><div class="actions"><button class="action" id="back" type="button">← Vorige level</button><button class="action" id="next" disabled>Volgende level →</button></div></div><aside class="journey-panel"><div class="panel-head">De muzikale reis</div><div class="journey-map" aria-hidden="true"></div><div class="journey-steps" id="journeySteps"></div><div class="compass" aria-hidden="true"></div></aside><p class="foot">Alle muziekafbeeldingen zijn originele, ongewijzigde uitsneden uit de zes aangeleverde scherpe fragmenten. Geen AI-hertekening.</p></div></div>
+<script>
+const DATA=[
+{id:'fa_begin',name:'fa groot · begin',key:'fa groot'},
+{id:'do',name:'do groot',key:'do groot'},
+{id:'re',name:'re klein',key:'re klein'},
+{id:'mod',name:'modulaties',key:'modulaties'},
+{id:'sol',name:'sol klein',key:'sol klein'},
+{id:'fa_einde',name:'fa groot · einde',key:'fa groot'}];
+const $=s=>document.querySelector(s),c=$('#content'),fb=$('#feedback'),next=$('#next');let level=0,points=0,won=false;const completed=new Set();const attempts=Array.from({length:19},()=>[]);let reportOpen=false;
+const E=(tag,cl='',txt)=>{const n=document.createElement(tag);n.className=cl;if(txt!==undefined)n.textContent=txt;return n};
+const get=id=>DATA.find(x=>x.id===id),src=(x,part='')=>x.id+(part?'_'+part:'')+'.jpg';
+function image(x,small=false,part=''){let i=E('img',small?'small':'score');i.src=src(x,part);i.alt='Origineel muziekfragment '+x.name+(part?' ('+part+')':'');i.onerror=()=>{i.alt='Afbeelding ontbreekt: '+i.src};return i}
+function title(h,desc){c.append(E('h2','',h),E('p','prompt',desc))}
+function success(msg){if(won)return;attempts[level].push({correct:true,answer:'Juist'});won=true;if(!completed.has(level)){completed.add(level);points+=10;}$('#points').textContent='★ '+points+' punten';fb.textContent='✓ '+msg;next.disabled=false}
+function fail(msg='Probeer opnieuw.',answer='Fout antwoord'){if(!won)attempts[level].push({correct:false,answer});fb.textContent=msg}
+function choices(opts,correct,msg){const w=E('div','options');opts.forEach(o=>{const b=E('button','opt',o);b.onclick=()=>{if(won)return;if(o===correct){b.classList.add('good');success(msg||'Juist!')}else{b.classList.add('bad');fail('Nog niet. Bekijk het fragment opnieuw.',o)}};w.append(b)});c.append(w)}
+function quiz(h,desc,id,opts,answer){title(h,desc);c.append(image(get(id)));choices(opts,answer,'Goed gezien: '+answer+'.')}
+function imageChoices(h,desc,shown,opts,answer,hideNames=false){title(h,desc);if(shown)c.append(image(get(shown)));const w=E('div','tiles');opts.forEach(id=>{const x=get(id),b=E('button','tile');b.append(image(x,true));if(!hideNames)b.append(E('strong','',x.name));b.onclick=()=>{if(won)return;if(id===answer){b.classList.add('good');success('Het juiste fragment gevonden!')}else{b.classList.add('bad');fail('Dat is niet het juiste fragment. Vergelijk de muzikale route.',get(id).name)}};w.append(b)});c.append(w)}
+function compare(h,desc,a,b,opts,answer){title(h,desc);const w=E('div','two');[a,b].forEach(id=>{let x=get(id),f=E('figure');f.append(image(x,true));w.append(f)});c.append(w);choices(opts,answer,'Je hebt de muzikale verwantschap herkend.')}
+function arrange(h,desc,ids,reverse=false,hideNames=false){title(h,desc);const target=reverse?[...ids].reverse():ids;let selected=null,positions=Array(ids.length).fill(null);const slots=E('div','slots'),tiles=E('div','tiles'),check=E('button','action','Controleer volgorde');const holder=E('div','actions');holder.append(check);c.append(slots,E('p','hint','Klik eerst op een fragment en daarna op een leeg vak. Je kunt ook slepen.'),tiles,holder);
+function draw(){slots.replaceChildren();tiles.replaceChildren();positions.forEach((id,i)=>{const s=E('button','slot');s.append(E('div','label',''+(i+1)));if(id){s.append(image(get(id),true));s.onclick=()=>{positions[i]=null;draw()}}else{s.append(E('div','','Plaats fragment'));s.onclick=()=>{if(selected){const prev=positions.indexOf(selected);if(prev!==-1)positions[prev]=null;positions[i]=selected;selected=null;draw()}}}s.ondragover=e=>e.preventDefault();s.ondrop=e=>{e.preventDefault();const id=e.dataTransfer.getData('text/plain');if(ids.includes(id)){const prev=positions.indexOf(id);if(prev!==-1)positions[prev]=null;positions[i]=id;draw()}};slots.append(s)});
+const shuffle=ids.map((id,i)=>({id,k:(i*7+3)%ids.length})).sort((a,b)=>b.k-a.k).map(x=>x.id);shuffle.filter(id=>!positions.includes(id)).forEach(id=>{const x=get(id),t=E('button','tile'+(selected===id?' sel':''));t.draggable=true;t.append(image(x,true));if(!hideNames)t.append(E('strong','',x.name));t.onclick=()=>{selected=id;draw()};t.ondragstart=e=>e.dataTransfer.setData('text/plain',id);tiles.append(t)})}check.onclick=()=>{if(positions.every((id,i)=>id===target[i]))success('Alle puzzelstukken staan juist!');else fail('De volgorde klopt nog niet. Probeer de overgangen opnieuw.','Verkeerde volgorde: '+positions.map(id=>id?get(id).name:'leeg').join(' → '))};draw()}
+function memory(h,desc,id,opts,correct){title(h,desc);const x=get(id),display=E('div');const countdown=E('div','timer');const start=E('button','action','Bekijk fragment (10 seconden)');const actions=E('div','actions');actions.append(start);c.append(display,countdown,actions);start.onclick=()=>{start.disabled=true;display.append(image(x));let left=10;countdown.textContent='Nog '+left+' seconden';const timer=setInterval(()=>{left--;countdown.textContent='Nog '+left+' seconden';if(left===0){clearInterval(timer);display.replaceChildren();countdown.textContent='Welk fragment zag je?';imageChoiceMemory(opts,correct)}},1000)};
+function imageChoiceMemory(ids,answer){const w=E('div','tiles');ids.forEach(id=>{const b=E('button','tile');b.append(image(get(id),true));b.onclick=()=>{if(won)return;if(id===answer)success('Correct onthouden!');else fail('Niet helemaal. Probeer opnieuw te herinneren wat je zag.',get(id).name)};w.append(b)});c.append(w)}}
+function match(h,desc,pairs){
+ title(h,desc+' Klik op een partituurfragment en daarna op de bijbehorende naam.');
+ const left=E('div','tiles'),right=E('div','tiles'),layout=E('div','two');layout.append(left,right);c.append(layout);
+ let selected=null;const matched=new Set();
+ pairs.forEach(([id],i)=>{
+  const b=E('button','tile');b.type='button';b.append(image(get(id),true));b.setAttribute('aria-label','Partituurfragment '+(i+1));
+  b.onclick=()=>{if(won||matched.has(id))return;left.querySelectorAll('.tile').forEach(x=>x.classList.remove('sel'));selected=id;b.classList.add('sel');fb.textContent='Kies nu de juiste naam rechts.'};left.append(b);
+ });
+ [...pairs].reverse().forEach(([id])=>{
+  const b=E('button','opt',get(id).name);b.type='button';b.onclick=()=>{
+   if(won||matched.has(id))return;
+   if(!selected){fail('Kies eerst een partituurfragment links.');return}
+   if(selected===id){matched.add(id);b.classList.add('good');b.disabled=true;[...left.children].find(x=>x.getAttribute('aria-label')==='Partituurfragment '+(pairs.findIndex(p=>p[0]===id)+1)).classList.add('good');selected=null;fb.textContent='Goed gekoppeld! '+matched.size+' van '+pairs.length+' gevonden.';if(matched.size===pairs.length)success('Alle fragmenten en namen zijn gekoppeld!')}
+   else {fail('Dat is niet de juiste combinatie. Probeer opnieuw.',get(selected).name+' gekoppeld aan '+get(id).name);selected=null;left.querySelectorAll('.tile').forEach(x=>x.classList.remove('sel'))}
+  };right.append(b)
+ });
+}
+function missing(h,desc,ids,missingIndex,opts){title(h,desc);const w=E('div','thumbrow');ids.forEach((id,i)=>{const b=E('div');if(i===missingIndex){b.className='slot';b.textContent='?'}else b.append(image(get(id),true));w.append(b)});c.append(w);const tile=E('div','tiles');opts.forEach(id=>{const b=E('button','tile');b.append(image(get(id),true));b.onclick=()=>{if(won)return;if(id===ids[missingIndex])success('De ontbrekende schakel klopt!');else fail('Niet juist. Kijk wat voor en na het vraagteken staat.',get(id).name)};tile.append(b)});c.append(tile)}
+function twoQuestions(h,desc,id,question,opts,answer){quiz(h,desc+' '+question,id,opts,answer)}
+const renderers=[
+()=>quiz('1 · De thuishaven','In welke toonaard begint de prelude?','fa_begin',['fa groot','do groot','sol klein'],'fa groot'),
+()=>quiz('2 · Het thema verhuist','Waar komt het thema vervolgens terecht?','do',['fa groot','do groot','re klein'],'do groot'),
+()=>compare('3 · De muzikale spiegel','Vergelijk de twee fragmenten. Welk antwoord beschrijft het best wat Bach doet?','fa_begin','do',['Bekend materiaal in een nieuwe toonaard','Een volledig nieuw thema','Exact hetzelfde zonder verandering'],'Bekend materiaal in een nieuwe toonaard'),
+()=>quiz('4 · De eerste mineurkleur','In welke tonale omgeving bevinden we ons?','re',['re klein','sol klein','do groot'],'re klein'),
+()=>quiz('5 · De overgang','Welke functie heeft dit fragment op onze tonale kaart?','mod',['modulaties','thuiskomst in fa groot','het begin in fa groot'],'modulaties'),
+()=>quiz('6 · De donkere halte','Herken de passage vlak voor de terugweg.','sol',['do groot','sol klein','re klein'],'sol klein'),
+()=>quiz('7 · Thuiskomst','Welke toonaard vormt de thuishaven aan het einde?','fa_einde',['fa groot','re klein','sol klein'],'fa groot'),
+()=>arrange('8 · De grote puzzel','Rangschik de zes originele fragmenten van begin tot einde.',DATA.map(x=>x.id)),
+()=>imageChoices('9 · Waar ben ik?','Welk fragment hoort bij de passage in sol klein?',null,['do','sol','re','fa_einde'],'sol',true),
+()=>imageChoices('10 · Wat komt hierna?','Kies het volgende grote tonale fragment na do groot.','do',['fa_einde','re','sol'],'re'),
+()=>missing('11 · De ontbrekende schakel','Welk groot fragment ontbreekt in deze reeks?',['fa_begin','do','re'],1,['sol','do','mod']),
+()=>memory('12 · De geheugentest','Bekijk tien seconden een fragment. Daarna verdwijnt het. Kies de juiste afbeelding.','re',['fa_begin','re','do'],'re'),
+()=>imageChoices('13 · Zoek de indringer','Welk fragment hoort NIET bij de drie eerste tonale stations? Kies de indringer.',null,['fa_begin','do','re','sol'],'sol',true),
+()=>match('14 · Fragmenten koppelen','Koppel elke afbeelding aan de juiste tonale halte.',[['fa_begin','fa_begin'],['do','do'],['sol','sol']]),
+()=>imageChoices('15 · De muzikale tweeling','Welk fragment is het thematische vervolg in do groot?','fa_begin',['re','do','fa_einde'],'do',true),
+()=>missing('16 · De ontbrekende halte','Welk fragment staat tussen het overgangsgebied en de terugkeer naar fa groot?',['mod','sol','fa_einde'],1,['do','sol','re']),
+()=>imageChoices('17 · Wat kwam hiervoor?','Welk groot fragment komt op onze kaart vóór sol klein?','sol',['mod','do','fa_begin'],'mod'),
+()=>memory('18 · Kijk, onthoud en herken','Probeer het fragment na tien seconden te herkennen.','fa_einde',['fa_begin','fa_einde','sol'],'fa_einde'),
+()=>arrange('19 · De meesterproef','Reconstrueer de volledige tonale reis van begin tot einde, zonder namen of hints.',DATA.map(x=>x.id),false,true)
+];
+function render(){reportOpen=false;next.style.display='';$('#back').style.display='';c.replaceChildren();fb.textContent='';won=completed.has(level);next.disabled=!won;$('#back').disabled=level===0;$('#levelnum').textContent='Level '+(level+1)+' van 19';$('#fill').style.width=(level/19*100)+'%';next.textContent=level===18?'Bekijk overzicht ✓':'Volgende level →';renderers[level]()}
+function showReport(){
+ reportOpen=true;c.replaceChildren();fb.textContent='';next.style.display='none';$('#back').style.display='none';$('#fill').style.width='100%';$('#levelnum').textContent='Resultatenoverzicht';
+ const name=$('#studentName').value.trim()||'Niet ingevuld';
+ const correctFirst=attempts.filter(a=>a.length>0&&a[0].correct).length;
+ const mistakes=attempts.reduce((n,a)=>n+a.filter(x=>!x.correct).length,0);
+ const report=E('div','report');report.append(E('h2','','🏆 Resultaten Bach BWV 928'),E('p','','Leerling: '+name+' · '+completed.size+' van 19 levels voltooid · '+correctFirst+' meteen juist · '+mistakes+' foutieve pogingen'));
+ const table=E('table'),thead=E('thead'),tr=E('tr');['Level','Resultaat','Foute antwoorden / pogingen'].forEach(x=>tr.append(E('th','',x)));thead.append(tr);table.append(thead);const tbody=E('tbody');
+ attempts.forEach((a,i)=>{const row=E('tr');const status=a.length===0?'Niet gemaakt':a[0].correct?'Meteen juist':'Juist na '+a.filter(x=>!x.correct).length+' foutieve poging(en)';row.append(E('td','',String(i+1)),E('td',a.length&&a[0].correct?'goodtxt':a.length?'badtxt':'',status),E('td','',a.filter(x=>!x.correct).map(x=>x.answer).join('; ')||'—'));tbody.append(row)});table.append(tbody);report.append(table);
+ const explain=E('p','hint','Druk je resultaten af of kies in het afdrukvenster «Bewaar als PDF».');report.append(explain);
+ const controls=E('div','actions'),print=E('button','action','🖨 Print / bewaar als PDF'),restart=E('button','action','↻ Opnieuw spelen');
+ print.onclick=()=>window.print();restart.onclick=()=>{level=0;points=0;completed.clear();attempts.forEach(a=>a.length=0);$('#points').textContent='★ 0 punten';render()};controls.append(print,restart);report.append(controls);c.append(report);
+}
+$('#back').onclick=()=>{if(reportOpen){reportOpen=false;render();return}if(level>0){level--;render()}};
+next.onclick=()=>{if(!won)return;if(level===18){showReport();return}level++;render()};render();
+</script><script>
+(function(){
+ const shell=document.querySelector('.game-shell');
+ const labels=['I','II','III','IV','V','VI'];
+ const mission=document.querySelector('#missionText'),journey=document.querySelector('#journeySteps');
+ function update(){
+  const current=(document.querySelector('#levelnum')?.textContent||'').match(/Level (\d+)/);
+  const index=current?Number(current[1])-1:19;
+  const descriptions=['Zoek de thuishaven van de prelude.','Volg het thema naar een nieuwe toonaard.','Vergelijk de twee originele partituurfragmenten.','Herken de eerste mineurkleur.','Ontdek hoe Bach van toonaard verandert.','Herken de donkere halte vlak voor de terugkeer.','Vind de thuiskomst in fa groot.','Leg de muzikale reis in de juiste volgorde.','Herken de juiste passage zonder naamkaartjes.','Wat volgt er op dit muzikale fragment?','Vul de ontbrekende schakel aan.','Kijk aandachtig, onthoud en herken.','Zoek de indringer tussen de fragmenten.','Koppel de partituurfragmenten aan hun naam.','Herken de muzikale verwantschap.','Vind de ontbrekende halte.','Denk één stap terug in de muzikale reis.','Test je visuele geheugen.','De meesterproef: leg alles zonder hints.'];
+  mission.textContent=index===19?'Je hebt de reis voltooid! Bekijk je antwoorden en bewaar het verslag als PDF.':descriptions[index]||descriptions[0];
+  journey.replaceChildren();labels.forEach((label,i)=>{const el=document.createElement('span');el.textContent=(index>=7||index===19)?label:(i<Math.min(index,6)?'✓':'✦');el.setAttribute('aria-label','Muzikale halte '+(i+1));if(i===Math.min(index,5)&&index<7)el.classList.add('active');if(i<Math.min(index,6))el.classList.add('done');journey.append(el)});
+ }
+ function fit(){
+  shell.style.setProperty('--game-scale','1');
+  const width=window.innerWidth,height=window.innerHeight;
+  const natural=Math.max(shell.scrollHeight,790);
+  const scale=Math.min(width/1500,height/natural,1.15);
+  shell.style.setProperty('--game-scale',String(Math.max(.15,scale)));
+ }
+ let pending=false;function schedule(){if(pending)return;pending=true;requestAnimationFrame(()=>{pending=false;update();fit()})}
+ new MutationObserver(schedule).observe(document.querySelector('#content'),{childList:true,subtree:true});
+ new MutationObserver(schedule).observe(document.querySelector('#levelnum'),{childList:true,characterData:true,subtree:true});
+ window.addEventListener('resize',schedule);document.querySelectorAll('img').forEach(i=>i.addEventListener('load',schedule));
+ document.addEventListener('load',e=>{if(e.target.tagName==='IMG')schedule()},true);
+ schedule();
+})();
+</script></body></html>
