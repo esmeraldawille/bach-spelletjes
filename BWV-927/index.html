@@ -1,0 +1,137 @@
+<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Bach BWV 927 — De geheugenpuzzel V11</title><style>
+:root{--gold:#e9c184;--navy:#12263b;--paper:#fffaf0}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% 0%,#31516b,#0e1b2b 75%);color:#f7edda;font-family:system-ui,-apple-system,sans-serif}main{max-width:1280px;margin:auto;height:100dvh;min-height:590px;padding:12px;display:flex;flex-direction:column;gap:9px}header{display:flex;justify-content:space-between;align-items:center;gap:10px}h1{font:clamp(22px,3vw,33px) Georgia,serif;color:var(--gold);margin:0}.kicker{color:var(--gold);font-size:11px;letter-spacing:.12em}.sub{font-size:12px;color:#c5d3d9}.controls{display:flex;gap:7px;flex-wrap:wrap}button{border:1px solid #9caebb;background:#304c63;color:white;padding:9px 12px;border-radius:10px;cursor:pointer;font-weight:650}button:disabled{opacity:.4;cursor:default}button:focus-visible{outline:3px solid var(--gold)}.gold{background:linear-gradient(125deg,#e0b36d,#f5dcaa);color:#203245;border:0}.progress{display:flex;gap:4px}.progress span{flex:1;height:6px;border-radius:9px;background:#486176}.progress .done{background:var(--gold)}.panel{flex:1;min-height:0;display:flex;flex-direction:column;gap:9px;border:1px solid #758b98;border-radius:17px;padding:13px;background:linear-gradient(150deg,#233d51,#142b3d);box-shadow:0 10px 32px #0004}h2{font:clamp(22px,2.6vw,30px) Georgia,serif;margin:0}.top{display:flex;justify-content:space-between;gap:10px;align-items:center}.pill{border:1px solid #bda06f;border-radius:30px;padding:6px 10px;font-size:12px;white-space:nowrap}.question{font-weight:700;font-size:clamp(16px,1.8vw,20px)}.stage{display:flex;flex-direction:column;gap:8px;min-height:0;overflow:auto;flex:1}.images{display:flex;gap:8px;align-items:center;justify-content:center}.score{background:#fff;color:#24394a;border:2px solid #d9b777;border-radius:10px;padding:6px;min-width:0;flex:1;text-align:center}.score img{width:100%;height:clamp(90px,22vh,235px);object-fit:contain;display:block}.score small{font-weight:700}.options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.option{display:flex;flex-direction:column;gap:4px;background:#fff;color:#1a3346;border:3px solid #c7d0d5;min-width:0;padding:6px}.option img{width:100%;height:clamp(75px,17vh,170px);object-fit:contain}.option.selected{border-color:#d7a044}.option.correct{border-color:#39956c;background:#effaf1}.option.wrong{border-color:#c25d5d}.option span{font-size:12px}.textoption{background:#304c63;color:#fff;text-align:left;padding:14px}.feedback{border-left:4px solid var(--gold);background:#2c4b5c;border-radius:8px;padding:9px;font-size:14px}.footer{display:flex;align-items:center;justify-content:space-between;gap:9px;margin-top:auto}.muted{color:#b8cbd3;font-size:12px}.hidden{display:none!important}.puzzle{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px}.tile{background:#fff;color:#183044;border:3px solid #b9c5cc;min-width:0;padding:5px;position:relative;touch-action:manipulation}.tile img{width:100%;height:clamp(58px,11vh,105px);object-fit:contain;display:block;pointer-events:none}.tile[draggable=true]{cursor:grab}.tile.used{opacity:.22}.slots{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}.slot{border:2px dashed #b6a27c;background:#324b5d;border-radius:8px;min-height:48px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:12px;cursor:pointer;padding:5px}.slot.filled{background:#e6cfaa;color:#24374a}.matchrow{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:center}.matchrow .score img{height:clamp(90px,21vh,210px)}.helper{font-size:12px;color:#bfcbd2}.spacer{flex:1}@media(max-width:740px){main{min-height:550px;padding:7px}.panel{padding:9px}.options{gap:5px}.option img{height:95px}.score img{height:130px}.puzzle{grid-template-columns:repeat(4,1fr)}.tile img{height:65px}.slots{grid-template-columns:repeat(4,1fr)}.controls button{padding:7px}.images{flex-wrap:wrap}.images .score{flex-basis:45%}}@media print{main{height:auto}.panel{background:white;color:black}.controls,.progress{display:none}body{background:white;color:black}.feedback{color:black}}
+
+.match-center{max-width:1020px;margin:0 auto;width:100%;display:flex;align-items:center;justify-content:center;gap:18px}
+.match-center .score{flex:1;max-width:48%}.match-center .score img{height:clamp(115px,26vh,240px)}
+.match-answers{display:flex;justify-content:center;gap:20px;width:100%;max-width:900px;margin:0 auto}
+.match-answers .option{width:47%;max-width:430px;flex:none}.match-answers .option img{height:clamp(105px,23vh,210px)}
+.pair-slots{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.pair-slot{min-height:110px;border:2px dashed #b6a27c;background:#324b5d;border-radius:9px;padding:5px;color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.pair-slot img{width:100%;height:clamp(75px,15vh,145px);object-fit:contain;background:white;border-radius:5px;pointer-events:none}
+.pair-tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}
+.pair-tile{background:#fff;border:3px solid #c7d0d5;padding:5px;min-width:0;touch-action:manipulation}
+.pair-tile img{width:100%;height:clamp(72px,14vh,130px);object-fit:contain;pointer-events:none}
+.pair-tile.used{opacity:.18}.pair-tile.active{border-color:#e9c184}
+.result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.result-item{background:#304b60;border-radius:9px;padding:10px;text-align:center}
+@media(max-width:740px){.pair-slot{min-height:72px}.pair-slot img,.pair-tile img{height:75px}.match-center .score img{height:120px}.match-answers .option img{height:110px}}
+
+:root{--gold:#dfbd76;--navy:#14253b;--paper:#f9efd9}
+body{background:radial-gradient(circle at 70% -20%,#476078 0%,#172940 46%,#0c192a 100%)}
+main{max-width:1380px}header{border-bottom:2px solid #b8965d;background:linear-gradient(100deg,#102239,#304960 65%,#182d46);border-radius:14px;padding:12px 22px}h1{font-family:Georgia,serif;letter-spacing:.6px;color:#f7d999} .panel{border:1px solid #c6a66d;background:linear-gradient(145deg,#1c334a,#233e54)}
+#stage{max-height:65vh;overflow:auto} .images .score img{max-height:24vh;object-fit:contain} .option img{max-height:22vh;object-fit:contain;width:100%}
+.options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.match-answers{display:flex;justify-content:center;gap:16px}
+.pair-slots,.pair-tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.pair-slot{min-height:115px;touch-action:pan-y}.pair-slot img{height:110px}.pair-tile img{height:105px}.pair-tile{cursor:grab}.pair-tile.used{opacity:.2}
+.puzzle-check{display:block;margin:12px auto!important;min-width:240px;background:#e7bc69!important;color:#17263a!important;font-size:1.12rem;font-weight:800;border-radius:12px;padding:13px 20px!important;box-shadow:0 4px 16px #0005}
+.roundtag{display:inline-block;padding:5px 12px;border:1px solid #d4b579;border-radius:40px;color:#f7dfae;font-size:12px}
+@media(max-width:700px){.pair-slot img,.pair-tile img{height:65px}.pair-slot{min-height:70px}.options{gap:5px}.option img{max-height:14vh}.match-answers .option img{height:95px}#stage{max-height:60vh}}
+@media print{#stage{max-height:none;overflow:visible}}
+
+:root{--gold:#e9c477;--ink:#18263c;--cream:#fff1d2}
+body{background:radial-gradient(ellipse at 50% 0%,#405470 0%,#162b45 42%,#091729 100%);color:#fff2d9}
+main{max-width:1450px;gap:8px}
+.ornate-header{position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:132px;overflow:hidden;border:3px double #e4bf76;border-radius:17px;background:linear-gradient(100deg,#0d1e32 0%,#233b55 45%,#14263b 100%);padding:12px 178px 12px 163px;box-shadow:0 7px 25px #0008,inset 0 0 0 5px #6b5432}
+.ornate-header:after{content:'❧  ♫  ❧';position:absolute;bottom:4px;left:40%;font-size:15px;color:#d5ac62;opacity:.65}
+.ornate-header .portrait{position:absolute;top:0;left:0;height:100%;width:149px;object-fit:cover;object-position:center 27%;border-right:3px solid #d9b16b}
+.ornate-header .manuscript{position:absolute;top:0;right:0;height:100%;width:160px;object-fit:cover;border-left:3px solid #d9b16b}
+.masthead{position:relative;z-index:1;min-width:0}.ornate-header h1{font-family:Georgia,serif;color:#f8dc9c;font-size:clamp(23px,3vw,39px);text-shadow:0 2px 4px #000;letter-spacing:.04em}.ornate-header .kicker{color:#e8ca89;letter-spacing:.14em}.ornate-header .controls{z-index:2;display:flex;flex-direction:column;gap:5px}.ornate-header .controls button{white-space:nowrap;background:#263f5b;border:1px solid #b99555;color:#fbe7bd;font-size:11px;padding:7px}
+.journey{display:flex;align-items:center;gap:12px;padding:8px 14px;border-radius:12px;background:linear-gradient(90deg,#4a331e,#987448,#4a331e);border:1px solid #edcb83;box-shadow:inset 0 1px 3px #0006}.journey .progress{flex:1}.journey-label{white-space:nowrap;font:700 11px Georgia,serif;letter-spacing:.12em;color:#fff0c6}
+.gilded{border:3px double #d9b476!important;background:linear-gradient(130deg,#19304a,#28435b 50%,#1b3048)!important;box-shadow:inset 0 0 0 3px #32425a,0 8px 20px #0006}
+.gilded .top{background:linear-gradient(90deg,#6c4c2a,#1c344e);padding:9px 12px;border:1px solid #c4a168;border-radius:9px}
+.gilded h2{font-family:Georgia,serif;color:#f9dca0}.question{color:#fff2d9;font-size:clamp(16px,1.6vw,22px)}
+.score{border:2px solid #d2ad69;background:#fff;box-shadow:0 3px 8px #0004}.option{border:3px solid #cba361;background:#fff9ed;box-shadow:0 3px 10px #0004}.option:hover{border-color:#f8d990}.pair-tile{border:2px solid #b9924f;background:#fff8e9}.pair-slot{background:#e6d7b6;border:2px dashed #997743;color:#322a1b}.pair-slot img{border:1px solid #a78855}.pair-tile img,.pair-slot img{object-fit:contain}
+.puzzle-check{background:linear-gradient(#ffe6a2,#d9a448)!important;border:2px solid #fff0b5!important;color:#16283d!important;box-shadow:0 4px 15px #0008!important}
+.feedback{background:#4b3b29;border:1px solid #d1aa6d;color:#fff1d1}
+@media(max-width:900px){.ornate-header{min-height:105px;padding:8px 100px 8px 100px}.ornate-header .portrait{width:90px}.ornate-header .manuscript{width:90px}.ornate-header h1{font-size:clamp(19px,3vw,29px)}.ornate-header .sub{display:none}.journey-label{font-size:9px}}
+@media(max-width:560px){.ornate-header{padding-right:8px}.ornate-header .manuscript{display:none}.ornate-header h1{white-space:normal}.journey-label:last-child{display:none}}
+@media print{.ornate-header{padding:10px;min-height:0}.portrait,.manuscript{display:none!important}.gilded{color:black;background:white!important}}
+
+/* V10: illustrated, playful musical adventure; original game logic unchanged */
+:root{--gold:#f3cc79;--navy:#14233b;--paper:#fff8e8}
+body{background:radial-gradient(circle at 12% 8%,#426a86 0%,transparent 32%),radial-gradient(circle at 90% 95%,#604e73 0%,transparent 36%),linear-gradient(140deg,#0c1a30,#203a57 50%,#101d32);background-attachment:fixed}
+main{max-width:1460px;padding:10px 13px;gap:9px}
+.ornate-header{min-height:146px;border:3px solid #f2cf84;border-radius:24px;background:radial-gradient(ellipse at 52% 0%,#476585aa,transparent 65%),linear-gradient(100deg,#152842,#30465d 50%,#172840);box-shadow:0 0 0 4px #8c693b,0 0 0 7px #f2cc7950,0 14px 36px #0009,inset 0 0 30px #0005;isolation:isolate}
+.ornate-header:before{content:'𝄞  ♬  ✦  ♫  ✧  ♬  𝄞';position:absolute;inset:auto 0 9px 0;text-align:center;color:#f7d78b;opacity:.52;font-size:21px;letter-spacing:15px;pointer-events:none;z-index:0}
+.ornate-header:after{content:'✦';position:absolute;right:175px;top:9px;font-size:26px;color:#ffdf96;opacity:.8}
+.ornate-header .portrait{border-right:4px solid #efc578;mask-image:linear-gradient(to right,black 85%,transparent);width:157px}
+.ornate-header .manuscript{width:169px;border-left:4px solid #efc578;mask-image:linear-gradient(to left,black 86%,transparent)}
+.ornate-header h1{font-size:clamp(24px,3.15vw,42px);color:#ffdf9b;text-shadow:0 3px 0 #1b2c42,0 6px 18px #000;letter-spacing:.01em}
+.ornate-header .kicker{font-weight:750;color:#ffe9b7}
+.ornate-header .sub{font-style:italic;color:#e9d8b6;font-family:Georgia,serif;font-size:14px}
+.ornate-header .controls button{border-radius:20px;background:linear-gradient(#516c85,#233a56);box-shadow:inset 0 1px 0 #ffffff45,0 3px 8px #0007}
+.journey{background:linear-gradient(95deg,#4b3151,#8a5574 30%,#7e5b35 65%,#493653);border:2px solid #efce8a;border-radius:20px;box-shadow:0 4px 14px #0007,inset 0 1px 3px #ffffff35}
+.journey .progress span{height:9px;background:#2b304b;border:1px solid #b8946c}
+.journey .progress .done{background:linear-gradient(90deg,#f8d87e,#fff1b5);box-shadow:0 0 9px #ffe3a6}
+.gilded{position:relative;border:3px solid #efc77e!important;border-radius:23px!important;background:radial-gradient(ellipse at 90% 0%,#4b607f88,transparent 44%),linear-gradient(145deg,#223b59,#142942 70%,#263f59)!important;box-shadow:0 0 0 4px #735636,0 10px 30px #0009,inset 0 0 0 2px #fff2c125!important}
+.gilded:before,.gilded:after{position:absolute;top:7px;font-size:22px;color:#f4d48b;opacity:.65;pointer-events:none}.gilded:before{content:'❦';left:13px}.gilded:after{content:'❦';right:13px}
+.gilded .top{margin:0 20px;background:linear-gradient(90deg,#65466b,#2e4667 60%,#6c5237);border:1px solid #e7c688;border-radius:15px;box-shadow:0 2px 8px #0005}
+.gilded h2{color:#ffe5a8;text-shadow:0 2px 6px #0007}
+.pill{background:#c69b5d;color:#17283c;font-weight:800;border:1px solid #ffdf9d}
+.question{font-family:Georgia,serif;font-size:clamp(17px,1.75vw,23px);color:#fff4d9;text-align:center}
+.score{border:3px solid #d5ad69;border-radius:14px;background:#fffef8;box-shadow:0 4px 13px #0006}
+.option,.pair-tile{border-radius:13px;border:3px solid #d9b774;background:linear-gradient(#fffdf4,#f4e7cb);box-shadow:0 4px 11px #0005;transition:transform .13s ease,border-color .13s ease}
+.option:hover,.pair-tile:hover{transform:translateY(-2px);border-color:#fff0ad}
+.pair-slot{border-radius:12px;background:linear-gradient(#f0dfbd,#d6b98a);border:2px dashed #9c6d3d;box-shadow:inset 0 2px 6px #0003}
+.puzzle-check,.gold{background:linear-gradient(#fff1bd,#f0c365 50%,#d89b42)!important;color:#18263d!important;border:2px solid #ffe8ad!important;box-shadow:0 4px 14px #0007,inset 0 1px 1px #fff!important}
+.feedback{border-radius:12px;background:#51445d;border:2px solid #f0c980;color:#fff8df}
+@media(max-width:900px){.ornate-header{min-height:110px}.ornate-header .portrait{width:94px}.ornate-header .manuscript{width:94px}.ornate-header:after{display:none}.ornate-header:before{font-size:13px;letter-spacing:5px}}
+@media(max-width:560px){.ornate-header{min-height:99px}.ornate-header .portrait{width:86px}.ornate-header .sub{display:none}.gilded .top{margin:0 7px}.ornate-header:before{display:none}}
+@media print{body{background:white}.gilded{background:white!important;color:black!important}.ornate-header{box-shadow:none}.question{color:black}}
+
+.name-overlay{position:fixed;inset:0;background:#071321e8;z-index:99;display:flex;align-items:center;justify-content:center;padding:18px}
+.name-card{width:min(450px,100%);padding:26px;border:2px solid #e9c184;border-radius:20px;background:linear-gradient(145deg,#294760,#13293e);box-shadow:0 20px 70px #000b;text-align:center}
+.name-card h2{color:#f3d59a;margin:10px 0}.name-card p{font-size:14px;color:#d8e2e9}.name-card input{width:100%;font:inherit;font-size:18px;padding:13px 14px;border:2px solid #d4b67d;border-radius:10px;background:#fffdf7;color:#1d3446;margin:10px 0 14px}
+.name-card button{width:100%;font-size:17px;padding:13px}.student-tag{color:#f3d59a;font-weight:700;font-size:13px;margin-top:5px}
+@media print{.name-overlay{display:none!important}}
+</style></head><body><div class="name-overlay" id="nameOverlay"><form class="name-card" onsubmit="startWithName(event)"><div class="kicker">✦ BACH BWV 927 ✦</div><h2>Welkom bij de geheugenpuzzel!</h2><p>Hoe heet jij?</p><input id="studentInput" type="text" placeholder="Jouw naam" maxlength="70" required autocomplete="given-name" aria-label="Naam van de leerling"><button type="submit" class="gold">Start het spel →</button></form></div><main><header class="ornate-header"><img class="portrait" src="assets/bach_portret.webp" alt="Portret van Bach"><div class="masthead"><div class="kicker">JOHANN SEBASTIAN BACH · PRAEAMBULUM IN FA GROOT</div><h1>BWV 927 · De geheugenpuzzel</h1><div class="sub">Akkoorden · patronen · voorspellen · reconstrueren</div><div class="student-tag" id="studentTag"></div></div><div class="controls"><button onclick="window.print()">⎙ Print / PDF</button><button onclick="restart()">↻ Herbegin</button></div><img class="manuscript" src="assets/manuscript.webp" alt="Historische partituur"></header><div class="journey"><span class="journey-label">✦ DE GEHEUGENREIS ✦</span><div class="progress" id="progress"></div><span class="journey-label">BWV 927</span></div><section class="panel gilded"><div class="top"><div><div class="kicker" id="chapter"></div><h2 id="title"></h2></div><div class="pill" id="counter"></div></div><div class="question" id="question"></div><div class="stage" id="stage"></div><div class="feedback hidden" id="feedback" aria-live="polite"></div><div class="footer"><span class="muted" id="status"></span><div class="controls"><button id="prev" onclick="prev()">← Vorige</button><button class="gold" id="next" onclick="next()">Volgende →</button></div></div></section></main><script>
+const P=n=>'assets/pair'+n+'.webp',A=n=>'assets/bron'+n+'.webp',H=(s,n)=>'assets/'+s+n+'.webp';
+const levels=[
+{title:'De muzikale spiegel',chapter:'I · Bouwstenen',q:'Wat gebeurt er tussen maten 1–2 en 3–4?',imgs:[P(0),P(1)],type:'text',choices:['Dezelfde harmonie; de handen wisselen van rol.','De harmonie verandert helemaal.','Alle noten blijven in dezelfde hand.'],correct:0,explain:'De harmonie blijft gelijk. Het muzikale patroon wisselt van hand.'},
+{title:'Akkoorden onder de noten',chapter:'II · Akkoorden',q:'Welke akkoorden horen bij deze partituur?',imgs:[A(2)],type:'image',choices:[A(8),A(7)],correct:1,explain:'De akkoordprogressie zit verborgen in de noten.'},
+{title:'De nieuwe akkoordroute',chapter:'II · Akkoorden',q:'Welke akkoordprogressie hoort hierbij?',imgs:[A(3)],type:'image',choices:[A(7),A(8)],correct:1,explain:'De akkoorden tonen hoe dit gedeelte is opgebouwd.'},
+{title:'Wat komt hierna?',chapter:'III · Voorspellen',q:'Welk fragment volgt op deze passage?',imgs:[P(3)],type:'image',choices:[P(0),P(4),P(6)],correct:1,explain:'Na maten 7–8 komen maten 9–10.'},
+{title:'Het slot herkennen',chapter:'III · Voorspellen',q:'Welk fragment is het slot?',type:'image',choices:[P(1),P(7),P(2)],correct:1,explain:'Het laatste fragment sluit het werk af.'},
+{title:'Het verborgen akkoord',chapter:'IV · Harmonie',q:'Bij welke partituur hoort deze akkoordprogressie?',imgs:[A(7)],type:'image',choices:[P(4),A(2),P(6)],correct:1,explain:'De akkoorden vormen de basis van deze passage.'},
+{title:'Welke linkerhand hoort erbij?',chapter:'V · Beide handen',q:'Welke linkerhand past bij deze rechterhand?',imgs:[H('rh',0)],type:'image',choices:[H('lh',1),H('lh',0),H('lh',2)],correct:1,explain:'De twee handen vormen samen één muzikaal geheel.'},
+{title:'Welke rechterhand hoort erbij?',chapter:'V · Beide handen',q:'Welke rechterhand past bij deze linkerhand?',imgs:[H('lh',1)],type:'image',choices:[H('rh',0),H('rh',1),H('rh',2)],correct:1,explain:'Je herkent de combinatie van beide handen.'},
+{title:'Nog een muzikale tweeling',chapter:'V · Beide handen',q:'Welke linkerhand hoort bij deze rechterhand?',imgs:[H('rh',2)],type:'image',choices:[H('lh',2),H('lh',0),H('lh',1)],correct:0,explain:'Deze twee fragmenten horen bij elkaar.'},
+{title:'De slotcadens',chapter:'VI · Finale',q:'Welke partituur hoort bij deze akkoorden?',imgs:['assets/cadence.webp'],type:'image',choices:[P(5),P(7),P(2)],correct:1,explain:'De slotakkoorden leiden naar het einde in fa groot.'},
+{title:'Waar ben ik? · ronde 1',chapter:'VII · Geheugenproef',q:'Wat komt hierna?',type:'random',round:0,explain:'Je herkent het vervolg van de passage.'},
+{title:'Waar ben ik? · ronde 2',chapter:'VII · Geheugenproef',q:'Wat komt hierna?',type:'random',round:1,explain:'Je weet welk puzzelstuk volgt.'},
+{title:'Waar ben ik? · ronde 3',chapter:'VII · Geheugenproef',q:'Wat komt hierna?',type:'random',round:2,explain:'Je vindt de volgende muzikale schakel.'},
+{title:'De grote partituurpuzzel',chapter:'VIII · Meesterproef',q:'Sleep alle fragmenten in de juiste volgorde.',type:'puzzle',explain:'Je hebt de volledige compositie gereconstrueerd!'}
+];
+let studentName="";
+function startWithName(event){event.preventDefault();const n=$("studentInput").value.trim();if(!n){$("studentInput").focus();return;}studentName=n;$("studentTag").textContent="Leerling: "+n;$("nameOverlay").classList.add("hidden");render();}
+let idx=0,done={},attempts={},errors={},order=Array(8).fill(null),activePiece=null,wrong=false,finished=false;
+const $=id=>document.getElementById(id),shuffled=[5,2,7,0,6,3,1,4];
+const tasks=[{start:2,opts:[4,3,6],correct:1},{start:4,opts:[6,5,1],correct:1},{start:6,opts:[7,2,4],correct:0}];
+function fig(src){return `<div class="score"><img src="${src}" alt="Muziekfragment"></div>`}
+function mark(ok){attempts[idx]=(attempts[idx]||0)+1;if(!ok)errors[idx]=(errors[idx]||0)+1;wrong=!ok;if(ok)done[idx]=true;render()}
+function render(){if(finished)return results();const l=levels[idx];$('chapter').textContent=l.chapter;$('title').textContent=l.title;$('question').textContent=l.q;$('counter').textContent=`LEVEL ${idx+1} / ${levels.length}`;$('progress').innerHTML=levels.map((_,i)=>`<span class="${done[i]?'done':''}"></span>`).join('');$('status').textContent=Object.keys(done).length+' / '+levels.length+' voltooid';$('prev').disabled=idx===0;$('next').disabled=!done[idx];$('next').textContent=idx===levels.length-1?'Bekijk resultaten →':'Volgende →';$('feedback').classList.toggle('hidden',!done[idx]&&!wrong);$('feedback').textContent=done[idx]?'✓ '+l.explain:'Probeer nog eens. Kijk goed naar de noten.';
+let html='';
+if(l.type==='puzzle'){
+html+='<div class="pair-slots">'+order.map((n,i)=>`<div class="pair-slot" ondragover="event.preventDefault()" ondrop="dropPair(event,${i})" onclick="placePair(${i})">${n===null?`<span>${i+1}</span>`:`<img src="${P(n)}" alt="Geplaatst fragment">`}</div>`).join('')+'</div>';
+html+='<div class="pair-tiles">'+shuffled.map(n=>`<button class="pair-tile ${order.includes(n)?'used':''} ${activePiece===n?'active':''}" draggable="${!order.includes(n)}" ondragstart="dragPair(event,${n})" onclick="selectPair(${n})" ${order.includes(n)?'disabled':''}><img src="${P(n)}" alt="Puzzelstuk"></button>`).join('')+'</div>';
+html+='<button class="puzzle-check" onclick="checkPair()">✓ Controleer de volgorde</button><div class="controls"><button onclick="undoPair()">↶ Laatste terug</button><button onclick="resetPair()">↻ Opnieuw</button></div>';
+}else if(l.type==='random'){
+const t=tasks[l.round];html+='<div class="images">'+fig(P(t.start))+'</div><div class="options">'+t.opts.map((n,i)=>`<button class="option" onclick="answer(${i})">${fig(P(n))}<span>${'ABC'[i]}</span></button>`).join('')+'</div>';
+}else{
+if(l.imgs)html+='<div class="images">'+l.imgs.map(fig).join('')+'</div>';
+html+=`<div class="${l.choices.length===2?'match-answers':'options'}">`+(l.type==='text'?l.choices.map((c,i)=>`<button class="textoption" onclick="answer(${i})">${'ABC'[i]}. ${c}</button>`).join(''):l.choices.map((c,i)=>`<button class="option" onclick="answer(${i})"><img src="${c}" alt="Antwoord ${'ABC'[i]}"><span>${'ABC'[i]}</span></button>`).join(''))+'</div>';
+}
+$('stage').innerHTML=html;
+}
+function answer(i){if(done[idx])return;const l=levels[idx];mark(i===(l.type==='random'?tasks[l.round].correct:l.correct))}
+function selectPair(n){if(order.includes(n))return;activePiece=n;render()}
+function dragPair(e,n){activePiece=n;e.dataTransfer.setData('text/plain',String(n))}
+function dropPair(e,i){e.preventDefault();activePiece=Number(e.dataTransfer.getData('text/plain'));placePair(i)}
+function placePair(i){if(activePiece===null){if(order[i]!==null){order[i]=null;delete done[idx];render()}return}const n=activePiece;if(order.includes(n))return;order[i]=n;activePiece=null;delete done[idx];wrong=false;render()}
+function undoPair(){for(let i=7;i>=0;i--)if(order[i]!==null){order[i]=null;break}delete done[idx];render()}
+function resetPair(){order=Array(8).fill(null);delete done[idx];wrong=false;render()}
+function checkPair(){mark(order.every((n,i)=>n===i))}
+function prev(){if(idx>0){idx--;wrong=false;render()}}
+function next(){if(!done[idx])return;if(idx===levels.length-1){finished=true;results()}else{idx++;wrong=false;render()}}
+function results(){$('chapter').textContent='DE GEHEUGENPROEF';$('title').textContent='Jouw resultaten';$('question').textContent='BWV 927 · Overzicht voor '+studentName;$('counter').textContent='VOLTOOID';$('progress').innerHTML=levels.map(()=>'<span class="done"></span>').join('');$('feedback').classList.add('hidden');$('status').textContent='Alle levels voltooid';$('prev').disabled=true;$('next').disabled=true;let e=Object.values(errors).reduce((a,b)=>a+b,0);$('stage').innerHTML=`<div class="result-grid"><div class="result-item"><b>${levels.length}</b><br>Levels</div><div class="result-item"><b>${e}</b><br>Foute pogingen</div><div class="result-item"><b>${Object.values(attempts).reduce((a,b)=>a+b,0)}</b><br>Pogingen</div></div><div class="results-list">`+levels.map((l,i)=>`<div style="display:flex;justify-content:space-between;border-bottom:1px solid #567;padding:9px 2px"><span>${i+1}. ${l.title}</span><span>${errors[i]||0} fout</span></div>`).join('')+`</div><div class="controls"><button onclick="window.print()">⎙ Print / PDF</button><button class="gold" onclick="restart()">↻ Speel opnieuw</button></div>`}
+function restart(){idx=0;done={};attempts={};errors={};order=Array(8).fill(null);activePiece=null;wrong=false;finished=false;render()}
+render();
+</script></body></html>
